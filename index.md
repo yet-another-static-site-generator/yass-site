@@ -77,6 +77,7 @@ look at [documentation](docs/user/index.html).
     [1.0](https://github.com/yet-another-static-site-generator/yass/releases/tag/v1.0)
     (2019-03-25)
 -   [Latest release documentation](docs/user/index.html)
+-   [Latest release code documentation](docs/code/index.html)
 -   [GitHub](https://github.com/yet-another-static-site-generator/yass)
 
 ## Donate
