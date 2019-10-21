@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{%Language%}">
+   <head>
+      <meta charset="UTF-8">
+      <link href="assets/css/style.css" rel="stylesheet" />
+      @@IF@@ not {%AtomLink%} = ""
+      {%AtomLink%}
+      @@END_IF@@
+      <title>{%Name%}</title>
+   </head>
+   <body>
+      <a name="top"></a>
+      <header>
+         <h1>{%Name%}</h1>
+      </header>
+      <div id="content">
+         {%Content%}
+      </div>
+      <footer id="footer">
+         <p>&copy; 2019 <a href="https://matrix.to/#/@thindil:matrix.org">Bartek thindil Jasicki</a>. Generated: {%NOW%} with <a href="https://yet-another-static-site-generator.github.io/">Yass</a>, color scheme: <a href="https://github.com/morhetz/gruvbox">Gruvbox</a></p>
+      </footer>
+   </body>
+</html>

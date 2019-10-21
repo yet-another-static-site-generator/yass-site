@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width">
+      <link href="assets/css/style.css" rel="stylesheet" />
+      <title>
+            Detailed Information About Program Options |
+         Yet Another Static Site (Generator) Documentation
+      </title>
+   </head>
+   <body>
+      <a name="top"></a>
+      <header>
+         <h1>Yet Another Static Site (Generator) Documentation</h1>
+            <h2>Detailed Information About Program Options</h2>
+      </header>
+      <div id="content">
+            <details>
+               <summary>Table of Contents</summary>
+               <ul>
+                  <li><a href="#notes">Notes</a></li>
+                  <li><a href="#create">Creating new site project</a></li>
+                  <li><a href="#build">Building existing project</a></li>
+                  <li><a href="#server">Server mode</a></li>
+                  <li><a href="#help">Help command</a></li>
+                  <li><a href="#version">Version command</a></li>
+                  <li><a href="#license">License command</a></li>
+                  <li><a href="#readme">Readme command</a></li>
+                  <li><a href="#createfile">Create empty markdown file</a></li>
+               </ul>
+            </details>
+      <h2><a name="notes"></a>Notes</h2>
+<ul>
+<li>If you want to run the program from other directory, you should set the
+environment variable <code>YASSDIR</code> to your current directory. Example:
+<code>export YASSDIR=$(pwd)</code>.</li>
+<li>If you use AppImage version of program, replace <code>yass</code> in examples with
+name of AppImage file (if not changed, this will be <code>yass-x86_64.AppImage</code>).</li>
+</ul>
+<p><a href="#top">^ Top</a></p>
+<h2><a name="create"></a>Creating new site project</h2>
+<p>To create new site project type in the directory where the file <code>yass</code> is
+<code>./yass create [ProjectName]</code> where <code>[ProjectName]</code> is the name of your site
+project. It will be the name of directory too. This command create the
+directory with the content:</p>
+<pre><code>[ProjectName]
+  |-_layouts
+     |-default.html
+  |-_output
+  |-_modules
+     |-end
+     |-post
+     |-pre
+     |-start
+  |-index.md
+  |-site.cfg
+</code></pre>
+<ul>
+<li>Directory <em>_layouts</em> contains Ada Web Server templates used to generate the
+site.</li>
+<li>Directory <em>_output</em> is the directory where generated site will be stored.</li>
+<li>Directory <em>_modules</em> is the directory where the program modules will be
+stored.</li>
+<li>File <em>index.md</em> is empty Markdown file which will be later main page of the
+site.</li>
+<li>File <em>site.cfg</em> is configuration file of project.</li>
+</ul>
+<p><a href="#top">^ Top</a></p>
+<h2><a name="build"></a>Building existing project</h2>
+<p>To build any existing site project, type in directory where the file <code>yass</code>
+is <code>./yass build [ProjectName]</code> where <code>[ProjectName]</code> is name of your site
+project. It will convert any not excluded file with extension <code>.md</code> to
+HTML file, apply layout to it and move with all others, not excluded files
+to the output directory (by default it is <em>_output</em> directory in <code>[ProjectName]</code>
+directory). Additonally, if you have enabled generating sitemaps, it will
+create one with all pages and file <code>robots.txt</code> to inform crawlers about the
+sitemap. This command preserve structure of directories and files in
+your project. Thus if you create the directory structure like this:</p>
+<pre><code>[ProjectName]
+  |-_layouts
+     |-default.html
+  |-_output
+  |-_modules
+     |-end
+     |-post
+     |-pre
+     |-start
+  |-index.md
+  |-site.cfg
+  |-images
+     |-newimage.png
+</code></pre>
+<p>Your new site will be have that directory structure (inside the <em>_output</em>
+directory). Files <code>sitemap.xml</code> and <code>robots.txt</code> will be added only when
+you will be have enabled option to create sitemap. File <code>atom.xml</code> will
+be added only when you will be have enabled option to create Atom feed:</p>
+<pre><code>index.html
+sitemap.xml
+robots.txt
+atom.xml
+images
+  |-newimage.png
+</code></pre>
+<p><a href="#top">^ Top</a></p>
+<h2><a name="server"></a>Server mode</h2>
+<p>To run the program in server mode, type in the directory where file <code>yass</code>
+is <code>./yass server [ProjectName]</code> where <code>[ProjectName]</code> is name of your site
+project. If you enabled the web server in <code>site.cfg</code> this will start it
+at <em>http://localhost:[port]/</em> (where <em>[port]</em> is port number set in <code>site.cfg</code>,
+by default it is <em>8888</em>) to which you can point your web browser to preview
+the site. If you enable it too, after the web server start, the program will
+open <code>index.html</code> page in selected web browser. Additionally, the program will
+be monitoring every <em>X</em> seconds (this is set in <code>site.cfg</code> file too, default
+every <em>5</em> seconds) your site project directory for changes to files. If any
+file will be changed during server work, it will regenerate it. If you add any
+new file, it will be added to the site output directory. If you change any
+layout file from layouts directory all HTML files which use this layout
+(directly, not as included) will be updated too. If you have enabled creating
+sitemaps, it will be upgraded or created too if needed, same with file
+<code>robots.txt</code>. If you have enabled creating atom feed, it will be upgrade or
+create <code>atom.xml</code> file if needed. If you want, you can set this command to
+terminate on any error occurence, during monitoring the site. Additionally,
+you can customize how directory listing looks, by editing <code>directory.html</code>
+file in layouts directory. More informations about available tags, you can
+find in [AWS API documentation]
+(https://docs.adacore.com/aws-docs/aws/apiref.html#aws-services-directory).</p>
+<h3>Limitations</h3>
+<ul>
+<li>Monitoring does not delete files. If you delete one, the program will not
+detect it. You must stop, remove old file manually, then restart the server.</li>
+<li>If you delete page which was in the sitemap, you will be need to edit the
+sitemap manually or delete it completely with file <code>robots.txt</code> to
+regenerate list of the site pages with <code>build</code> command.</li>
+<li>Same with Atom feed, if you delete page which was in feed, you will need to
+edit <code>atom.xml</code> file or delete it to regenerate it with <code>build</code> command.</li>
+<li>If you edit global tag (in <code>site.cfg</code> file) you will be need to stop the
+program and rebuild whole site with <code>build</code> command, because server can
+monitor only settings changes (it will not rebuild <code>.md</code> files).</li>
+</ul>
+<p><a href="#top">^ Top</a></p>
+<h2><a name="help"></a>Help command</h2>
+<p>This command gives only short information about all available program's
+commands. To run it, type in directory where the file <code>yass</code> is <code>./yass help</code>.</p>
+<p><a href="#top">^ Top</a></p>
+<h2><a name="version"></a>Version command</h2>
+<p>This command gives only short information about the program version and it
+release date. To run it, type in directory where the file <code>yass</code> is
+<code>./yass version</code>.</p>
+<p><a href="#top">^ Top</a></p>
+<h2><a name="license"></a>License command</h2>
+<p>This command gives only short information about the program license. To run
+it, type in directory where the file <code>yass</code> is <code>./yass license</code>.</p>
+<p><a href="#top">^ Top</a></p>
+<h2><a name="readme"></a>Readme command</h2>
+<p>This command prints in terminal content of README.md file. To run it, type in
+directory where the file <code>yass</code> is <code>./yass readme</code>.</p>
+<p><a href="#top">^ Top</a></p>
+<h2><a name="createfile"></a>Create empty markdown file</h2>
+<p>If you want to create a new empty (only with comments) markdown file in your
+site project, type in directory where the file <code>yass</code> is
+<code>./yass [path][filename].md</code>. You may omit file extension, it will be added
+automatically by the program.</p>
+<p><a href="#top">^ Top</a></p>
+
+      </div>
+      <div id="container">
+            <div id="left"><a href="quickstart.html" class="button">&lt;&lt; Quick Start</a></div>
+            <div id="right"><a href="tags.html" class="button">Tags &gt;&gt;</a></div>
+            <div id="center"><a href="index.html" class="button">Index</a></div>
+      </div>
+      <footer>
+         <p>&copy; 2019 <a href="https://matrix.to/#/@thindil:matrix.org">Bartek thindil Jasicki</a>. Generated: 2019-03-08 07:50:48 with <a href="https://yet-another-static-site-generator.github.io/">Yass</a>, color scheme: <a href="https://github.com/morhetz/gruvbox">Gruvbox</a></p>
+      </footer>
+   </body>
+</html>
