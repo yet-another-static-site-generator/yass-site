@@ -55,7 +55,7 @@ the web server).</li>
 be listening. Please remember that using ports below 1025 number require
 root privileges. Default value is <code>8888</code></li>
 <li>StopServerOnError - can have true or false value, case-insensitive. Did
-command <code>server</code> should terminate if error occured, during creating the site.
+command <code>server</code> should terminate if error occurred, during creating the site.
 Default value is <code>false</code> (don't terminate on error).</li>
 <li>BrowserCommand - Full path to the command which will be used to start the web
 browser with index.html page of the site. String <code>%s</code> will be replaced by
@@ -83,6 +83,10 @@ Atom feed tags, please see section <a href="pages.html">Configuring Pages</a>. D
 value is <code>none</code>.</li>
 <li>AtomFeedAmount - Number of entries in the Atom feed (if it will be created,
 please see setting above).</li>
+<li>Name - The name of the site which will be created. If you have enabled
+creating Atom feed then it is needed. Otherwise, you can use it as a normal
+template tag.</li>
+<li>Language - The ISO 639-1 language code in which the site will be created.</li>
 <li>Author - the name of the author of the site. If you have enabled creating
 Atom feed, then it is needed. Otherwise, you can use it as a normal template
 tag. Default value is <code>Jon Doe</code>.</li>
@@ -112,7 +116,7 @@ section <a href="tags.html">Templates Tags</a>.</p>
             <div id="center"><a href="index.html" class="button">Index</a></div>
       </div>
       <footer>
-         <p>&copy; 2019 <a href="https://matrix.to/#/@thindil:matrix.org">Bartek thindil Jasicki</a>. Generated: 2019-03-15 10:25:13 with <a href="https://yet-another-static-site-generator.github.io/">Yass</a>, color scheme: <a href="https://github.com/morhetz/gruvbox">Gruvbox</a></p>
+         <p>&copy; 2019 <a href="https://matrix.to/#/@thindil:matrix.org">Bartek thindil Jasicki</a>. Generated: 2019-10-23 07:06:06 with <a href="https://yet-another-static-site-generator.github.io/">Yass</a>, color scheme: <a href="https://github.com/morhetz/gruvbox">Gruvbox</a></p>
       </footer>
    </body>
 </html>
