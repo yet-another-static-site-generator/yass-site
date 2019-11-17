@@ -74,8 +74,8 @@ look at [documentation](docs/user/index.html).
 ## Links
 
 -   Last release:
-    [1.1](https://github.com/yet-another-static-site-generator/yass/releases/tag/v1.1)
-    (2019-10-23)
+    [2.0](https://github.com/yet-another-static-site-generator/yass/releases/tag/v2.0)
+    (2019-11-17)
 -   [Latest release documentation](docs/user/index.html)
 -   [Latest release code documentation](docs/code/index.html)
 -   [GitHub](https://github.com/yet-another-static-site-generator/yass)
