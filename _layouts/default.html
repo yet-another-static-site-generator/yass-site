@@ -2,7 +2,7 @@
 <html lang="{%Language%}">
    <head>
       <meta charset="UTF-8">
-      <link href="assets/css/style.css" rel="stylesheet" />
+      <link href="{%BaseURL%}/assets/css/style.css" rel="stylesheet" />
       @@IF@@ not {%AtomLink%} = ""
       {%AtomLink%}
       @@END_IF@@
@@ -17,7 +17,7 @@
          {%Content%}
       </div>
       <footer id="footer">
-         <p>&copy; 2019 <a href="https://matrix.to/#/@thindil:matrix.org">Bartek thindil Jasicki</a>. Generated: {%NOW%} with <a href="https://yet-another-static-site-generator.github.io/">Yass</a>, color scheme: <a href="https://github.com/morhetz/gruvbox">Gruvbox</a></p>
+         <p>&copy; 2019 <a href="https://matrix.to/#/@thindil:matrix.org">Bartek thindil Jasicki</a> &amp; 2022 <a href="https://github.com/AJ-Ianozi">A.J. Ianozi</a>. Generated: {%NOW%} with <a href="https://yet-another-static-site-generator.github.io/">Yass</a>, color scheme: <a href="https://github.com/morhetz/gruvbox">Gruvbox</a></p>
       </footer>
    </body>
 </html>

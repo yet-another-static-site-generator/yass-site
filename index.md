@@ -74,8 +74,8 @@ look at [documentation](docs/user/index.html).
 ## Links
 
 -   Last release:
-    [2.0](https://github.com/yet-another-static-site-generator/yass/releases/tag/v2.0)
-    (2019-11-17)
+    [3.0](https://github.com/yet-another-static-site-generator/yass/releases/tag/v3.0)
+    (2021-10-29)
 -   [Latest release documentation](docs/user/index.html)
 -   [Latest release code documentation](docs/code/index.html)
 -   [GitHub](https://github.com/yet-another-static-site-generator/yass)
@@ -85,4 +85,4 @@ look at [documentation](docs/user/index.html).
 If you want to support the program development, you can donate some
 money by Liberapay or Patreon.
 
-<a href="https://liberapay.com/thindil" class="image"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a> <a href="https://www.patreon.com/thindil" class="image"><img alt="Become a Patron!" src="assets/images/patreon.png" width="150"></a>
+<a href="https://liberapay.com/thindil" class="image"><img alt="Donate to thindil using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a> <a href="https://www.patreon.com/ajdude" class="image"><img alt="Donate to AJ as a Patron!" src="assets/images/patreon.png" width="150"></a>
