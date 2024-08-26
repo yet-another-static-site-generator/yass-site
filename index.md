@@ -25,6 +25,8 @@ look at [documentation](docs/user/index.html).
 
 ## Features
 
+-   Available on Windows, MacOS, and Linux
+
 -   Advanced [Ada Web Server HTML templates](http://docs.adacore.com/aws-docs/templates_parser/)
 
     Composite tags allows easily creating lists or tables without HTML
@@ -74,8 +76,8 @@ look at [documentation](docs/user/index.html).
 ## Links
 
 -   Last release:
-    [3.0](https://github.com/yet-another-static-site-generator/yass/releases/tag/v3.0)
-    (2021-10-29)
+    [3.1.0](https://github.com/yet-another-static-site-generator/yass/releases/tag/v3.1.0)
+    (2024-08-23)
 -   [Latest release documentation](docs/user/index.html)
 -   [Latest release code documentation](docs/code/index.html)
 -   [GitHub](https://github.com/yet-another-static-site-generator/yass)
