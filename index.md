@@ -17,9 +17,9 @@
 As name says, it is static site generator written in Ada. It is
 *headless* application (no user interface, use it from console). Main
 goal of the project is create simple static site generator, with some
-basic functions but easily extendable. The program is available only
-for Linux 64-bit. For more informations about the program, please
-look at [documentation](docs/user/index.html).
+basic functions but easily extendable. The program is available on Mac, Linux,
+and Windows. For more informations about the program, please
+look at [documentation](docs/user/index.html) or download the [latest release](https://github.com/yet-another-static-site-generator/yass/releases/latest).
 
 <div id="center"><a class="button" href="docs/user/quickstart.html">Quick start</a></div>
 
